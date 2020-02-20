@@ -1,3 +1,4 @@
+const url = 'https://tronalddump.io/random/quote';
 const quotes = [];
 
 function fetchDataByUrl (url, format) {
@@ -33,7 +34,7 @@ function fetchDataByUrl (url, format) {
 function createQuoteList (result) {
   if (quotes.length < 5) {
     quotes.push(result);
-    fetchDataByUrl('https://www.tronalddump.io/random/quote', 'json');
+    fetchDataByUrl(url, 'json');
   }
   else {
     generateUiForQuotes()
@@ -93,4 +94,4 @@ function generateUiForQuotes () {
   quotesEl.innerHTML = tempStr;
 }
 
-fetchDataByUrl('https://www.tronalddump.io/random/quote', 'json');
+fetchDataByUrl(url, 'json');

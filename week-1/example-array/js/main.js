@@ -82,4 +82,3 @@ allCars = studentCars.reduce((accumulator, car, index, array) => {
 }, allCars);
 
 console.log(allCars);
-
