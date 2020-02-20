@@ -1,23 +1,21 @@
 const url = 'https://tronalddump.io/random/quote';
 const quotes = [];
 
-function fetchDataByUrl (url, format) {
+function fetchDataByUrl (url) {
   let xhr = new XMLHttpRequest();
-  xhr.responseType = format;
+  xhr.responseType = 'json';
   xhr.open('GET', url);
   xhr.send();
 
   xhr.onerror = () => {
-    console.log('Marie-Jean, tè ni helukt ni');
+    console.log('Oeps');
   }
 
   xhr.onprogress = (event) => {
-    console.log('ejje ohenbliksje');
+    console.log('...');
   }
 
   xhr.onload = () => {
-    console.log('Marie-Jean! tè helukt');
-
     let status = xhr.status;
     console.log(status);
 
@@ -37,7 +35,7 @@ function createQuoteList (result) {
     fetchDataByUrl(url, 'json');
   }
   else {
-    generateUiForQuotes()
+    generateUiForQuotes();
   }
 }
 
