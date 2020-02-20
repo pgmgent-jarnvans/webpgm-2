@@ -38,3 +38,38 @@ let outputGraduaat = coolShoppingCart.map(item => {
   return item;
 });
 console.log(outputGraduaat);
+
+let studentCars = [
+  {
+    brand: 'Hyundai',
+    model: 'ix20',
+    fuel: 'nafte',
+    options: ['poepverwarming', 'elektrische ruiten', 'airco'],
+  },
+  {
+    brand: 'BMW',
+    model: 'M5',
+    fuel: 'nafte',
+    options: [],
+  },
+  {
+    brand: 'Skoda',
+    model: 'Fabia',
+    fuel: 'mazout',
+    options: ['rijdt', 'remt', 'rookt'],
+  },
+  {
+    brand: 'Reebok',
+    model: 'Sneakers',
+    fuel: 'glucose',
+    options: ['uitneembare zolen'],
+  },
+];
+
+function drivesOnGasolineAndHasTwoOptions(shoeCar) {
+  return (shoeCar.fuel === 'nafte' && shoeCar.options.length > 1);
+}
+
+const outputFiltered = studentCars.filter(drivesOnGasolineAndHasTwoOptions);
+
+console.log(outputFiltered);
