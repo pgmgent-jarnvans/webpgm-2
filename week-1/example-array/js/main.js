@@ -70,6 +70,16 @@ function drivesOnGasolineAndHasTwoOptions(shoeCar) {
   return (shoeCar.fuel === 'nafte' && shoeCar.options.length > 1);
 }
 
-studentCars = studentCars.filter(drivesOnGasolineAndHasTwoOptions);
+// studentCars = studentCars.filter(drivesOnGasolineAndHasTwoOptions);
+//console.log(studentCars);
 
-console.log(studentCars);
+let allCars = '';
+
+allCars = studentCars.reduce((accumulator, car, index, array) => {
+  accumulator += `${car.brand} ${car.model}`;
+  if (index < array.length - 1) accumulator += ', ';
+  return accumulator;
+}, allCars);
+
+console.log(allCars);
+
