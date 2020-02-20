@@ -70,6 +70,6 @@ function drivesOnGasolineAndHasTwoOptions(shoeCar) {
   return (shoeCar.fuel === 'nafte' && shoeCar.options.length > 1);
 }
 
-const outputFiltered = studentCars.filter(drivesOnGasolineAndHasTwoOptions);
+studentCars = studentCars.filter(drivesOnGasolineAndHasTwoOptions);
 
-console.log(outputFiltered);
+console.log(studentCars);
